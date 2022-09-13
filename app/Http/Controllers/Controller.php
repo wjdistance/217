@@ -29,6 +29,7 @@ class Controller extends BaseController
 
             $this->points($referee_id, $option);
         }
+        User::create(['name' => $data['name'], 'referee_id' => $referee_id, 'email'=>$data['email'], 'password' => bcrypt($data['password'])]);
         return true;
     }
 
